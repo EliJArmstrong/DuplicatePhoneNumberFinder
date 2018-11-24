@@ -1,6 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// <author>Eli Armstrong</author>
+// <remarks>I pledge my word of honor that I have abided
+// by the CSN Academic Integrity Policy while completing
+// this assignment.</remarks>
+// <file>Program.cs</file>
+// <date>2018-10-16</date>
+// <summary>The start of the program.</summary> 
+// <remarks>Time taken to develop, write, test and debug
+// solution. About 4 hours. </remarks>
 
+using System;
+using System.IO;
 
 namespace DuplicatePhoneNumberFinder
 {
@@ -11,6 +20,7 @@ namespace DuplicatePhoneNumberFinder
             int count = 0;
             var readLines = File.ReadAllLines("../../test_input.txt");
             PhoneNumberList phoneList = new PhoneNumberList();
+            PhoneData phone;
 
 
             int numberOFDataSets = int.Parse(readLines[count++]);
@@ -21,7 +31,7 @@ namespace DuplicatePhoneNumberFinder
                 int numberOfPhoneNumbers = int.Parse(readLines[count++]);
                 for (int j = 0; j < numberOfPhoneNumbers; j++)
                 {
-                    PhoneData phone = new PhoneData(PhoneLettersToNumbers.FormatToPhoneNumber(readLines[count++]));
+                    phone = new PhoneData(PhoneLettersToNumbers.FormatToPhoneNumber(readLines[count++]));
                     phoneList.InsertByNumber(phone);
                 }
                 count++;
