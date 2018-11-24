@@ -167,9 +167,7 @@ namespace DuplicatePhoneNumberFinder
         /// -------------------------------------------------------------------
         public void DisplayPhoneDups()
         {
-            // A list to check hold strings. If this empty at the end of the 
-            // while loop then there where no duplicates where in the link list.
-            List<string> phoneList = new List<String>();
+            var foundDups = false;
 
             // An iterator to move through the link list.
             ListNode current = firstNode;
@@ -182,22 +180,17 @@ namespace DuplicatePhoneNumberFinder
                 var phone = (PhoneData)current.Data;
                 if (phone.Count > 1)
                 {
-                    phoneList.Add($"{phone.ToString()} {phone.Count}");
+                    Console.WriteLine($"{phone.ToString()} {phone.Count}");
+                    foundDups = true;
                 }
                 current = current.Next;
             }
 
-            if (phoneList.Count == 0)
+            if (!foundDups)
             {
                 Console.WriteLine($"No duplicates.");
             }
-            else
-            {
-                foreach (var item in phoneList)
-                {
-                    Console.WriteLine(item);
-                }
-            }
+            
         }
 
     }
