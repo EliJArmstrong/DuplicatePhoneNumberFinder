@@ -1,12 +1,28 @@
-﻿using System.Collections.Generic;
+﻿// <author>Eli Armstrong</author>
+// <remarks>I pledge my word of honor that I have abided
+// by the CSN Academic Integrity Policy while completing
+// this assignment.</remarks>
+// <file>PhoneLettersToNumbers.cs</file>
+// <date>2018-11-23</date>
+// <summary> This class is used to change to letter on the 
+// phone dial to it digit counterpart.</summary> 
+// <remarks>Time taken to develop, write, test and debug
+// solution. About 3 hours. </remarks>
 
+using System.Collections.Generic;
 
+// ----------------------------------------------------------------------------
+// The Name Space for DuplicatePhoneNumberFinder.
+// ----------------------------------------------------------------------------
 namespace DuplicatePhoneNumberFinder
 {
+    /// -----------------------------------------------------------------------
+    /// <summary>The static PhoneLettersToNumbers class.</summary>
+    /// -----------------------------------------------------------------------
     static class PhoneLettersToNumbers
     {
         // Holds a Dictionary with a char as the key and a char as a value.
-        // I made it read only
+        // I made it read only. : )
         private readonly static Dictionary<char, char> letterToNumber =
             new Dictionary<char, char>()
               {
@@ -22,6 +38,16 @@ namespace DuplicatePhoneNumberFinder
                     {'0', '0'}
               };
 
+        /// -------------------------------------------------------------------
+        /// <summary>
+        /// Converts a letter to it number counterpart.
+        /// </summary>
+        /// <param name="letter"> the char to be converted.</param>
+        /// <returns>A char that is a number found on a phone.</returns>
+        /// <remarks>If the letter is not a char on a phone then the method 
+        /// returns a blank space. Because one can not return an empty char.
+        /// </remarks>
+        /// -------------------------------------------------------------------
         public static char Convert(char letter)
         {
             char returnChar = ' ';
@@ -32,14 +58,25 @@ namespace DuplicatePhoneNumberFinder
             return returnChar;
         }
 
+        /// -------------------------------------------------------------------
+        /// <summary>
+        /// This method taken in a string and converts it into a phone number 
+        /// format.
+        /// </summary>
+        /// <param name="line">The string to be converted</param>
+        /// <returns> A formated string in the format of a phone number.
+        /// </returns>
+        /// <remarks>This will added the '-' in the phone number.</remarks>
+        /// -------------------------------------------------------------------
         public static string FormatToPhoneNumber(string line)
         {
+            // The string to be returned.
             string returnString = "";
-            for (int i = 0; i < line.Length; i++)
+            foreach (var ch in line)
             {
-                    if (letterToNumber.ContainsKey(line[i]))
+                    if (letterToNumber.ContainsKey(ch))
                     {
-                        returnString += letterToNumber[line[i]];
+                        returnString += letterToNumber[ch];
                     }
             }
             returnString = returnString.Insert(3, "-");
