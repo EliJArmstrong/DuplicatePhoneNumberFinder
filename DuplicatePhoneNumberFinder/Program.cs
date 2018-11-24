@@ -35,7 +35,7 @@ namespace DuplicatePhoneNumberFinder
         /// returns a StreamReader to read the file. Else, the user is again 
         /// asked for a file path.
         /// </summary>
-        /// <returns> A vaild StreamReader </returns>
+        /// <returns> A valid StreamReader </returns>
         private static StreamReader FileGetter()
         {
             //The path of where the file to be read is located.

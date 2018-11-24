@@ -92,14 +92,14 @@ namespace DuplicatePhoneNumberFinder
         private void FindInsertPosition(ref ListNode current, 
                                     ref ListNode previous, ref PhoneData phone)
         {
-            // A flag if the loaction to insert the node is found before 
+            // A flag if the location to insert the node is found before 
             // getting to the end of the link list.
             var found = false;
 
             current = firstNode;
             while (current != null && !found)
             {
-                // Holds infomation from the Data variable in a ListNode when 
+                // Holds information from the Data variable in a ListNode when 
                 // converted to a PhoneData from comparisons.
                 var currentData = current.Data as PhoneData;
                 if (currentData.ToString().CompareTo(phone.ToString()) >= 0)
@@ -128,12 +128,12 @@ namespace DuplicatePhoneNumberFinder
         private void InsertData(ref ListNode current,
                                     ref ListNode previous, ref ListNode newNode)
         {
-            // Holds infomation from the Data variable in a ListNode when 
+            // Holds information from the Data variable in a ListNode when 
             // converted to a PhoneData from comparisons. This is check 
             // also check to see if null.
             var currentData = (current != null) ? (PhoneData)current.Data : null;
             
-            // Holds infomation from the Data variable in a ListNode when 
+            // Holds information from the Data variable in a ListNode when 
             // converted to a PhoneData from comparisons.
             var newNodeData = (PhoneData)newNode.Data;
 
@@ -177,7 +177,7 @@ namespace DuplicatePhoneNumberFinder
             // output current node data while not at end of list
             while (current != null)
             {
-                // Holds infomation from the Data variable in a ListNode when 
+                // Holds information from the Data variable in a ListNode when 
                 // converted to a PhoneData from comparisons.
                 var phone = (PhoneData)current.Data;
                 if (phone.Count > 1)
