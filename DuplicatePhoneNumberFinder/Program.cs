@@ -92,6 +92,15 @@ namespace DuplicatePhoneNumberFinder
                         }
                         file.ReadLine();
                         phoneList.DisplayPhoneDups();
+                        if (phoneList.HasDups())
+                        {
+                            Console.WriteLine("\nDisplayed by count:\n");
+                            phoneList.DisplayByCount();
+                        }
+                        else
+                        {
+                            Console.WriteLine($"No duplicates.");
+                        }
                         phoneList = new PhoneNumberList();
                         Console.WriteLine();
                     }
